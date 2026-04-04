@@ -1,0 +1,47 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #22222b;
+  color: #ddd;
+  margin: 0
+}
+
+.content {
+    padding: 20px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #181818;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+/* Base styles for all links in the nav */
+.topnav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: all 0.3s ease; /* Makes the zoom and border smooth */
+  border: 2px solid transparent; /* Prevents jumping when border appears */
+  font-size: 100;
+}
+
+/* The "Selected" state (Home) and Hover state */ 
+.topnav a:hover {
+  transform: scale(1.1);     /* The zoom effect (1.1 = 110% size) */
+  background-color: rgb(35, 33, 43)
+}
+
