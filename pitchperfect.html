@@ -15,9 +15,6 @@
     <script src="navbar.js"></script>
     <div class="content">
         <div class="title">Pitch perfect</div>
-        <div class="subtitle">
-            <p>Press "New Note" to begin guessing!</p>
-        </div>
         <div class="embed">
             <script src="pitchperfectgame.js" defer></script>
                     <div class="game-container">
@@ -31,10 +28,7 @@
             </div>
             </div>
             <br>
-            <br>
-            <p>Select the buttons below to filter which notes the tone will play. It is recommended to start with C, D, and E only if you are just starting. 
-            <p> The piano keys are your guess after you press the tone.</p>
-            <br>
+            <h1>Filter Allowed keys</h1>
             <div class="note-selection">
                 <button class="filter-btn active" data-note="C">C</button>
                 <button class="filter-btn active" data-note="C#">C#</button>
@@ -49,19 +43,21 @@
                 <button class="filter-btn active" data-note="A#">A#</button>
                 <button class="filter-btn active" data-note="B">B</button>
             </div>
+            <br>
+            <h1>Guess!</h1>
             <div class="piano">
-                <div class="key white" data-note="C4"></div>
-                <div class="key black" data-note="C#4"></div>
-                <div class="key white" data-note="D4"></div>
-                <div class="key black" data-note="D#4"></div>
-                <div class="key white" data-note="E4"></div>
-                <div class="key white" data-note="F4"></div>
-                <div class="key black" data-note="F#4"></div>
-                <div class="key white" data-note="G4"></div>
-                <div class="key black" data-note="G#4"></div>
-                <div class="key white" data-note="A4"></div>
-                <div class="key black" data-note="A#4"></div>
-                <div class="key white" data-note="B4"></div>
+                <div class="key white" data-note="C4">C</div>
+                <div class="key black" data-note="C#4">C#</div>
+                <div class="key white" data-note="D4">D</div>
+                <div class="key black" data-note="D#4">D#</div>
+                <div class="key white" data-note="E4">E</div>
+                <div class="key white" data-note="F4">F</div>
+                <div class="key black" data-note="F#4">F#</div>
+                <div class="key white" data-note="G4">G</div>
+                <div class="key black" data-note="G#4">G#</div>
+                <div class="key white" data-note="A4">A</div>
+                <div class="key black" data-note="A#4">A#</div>
+                <div class="key white" data-note="B4">B</div>
             </div>
             <div id="status-message"></div>
         </div>

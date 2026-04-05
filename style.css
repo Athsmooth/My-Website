@@ -60,6 +60,13 @@ body {
 .topnav {
   background-color: #181818;
   overflow: hidden;
+
+  /* --- New Required Styles --- */
+  position: fixed;      /* Sits on top of the content */
+  top: 0;
+  width: 100%;
+  z-index: 1000;        /* Ensures it stays above the piano/content */
+  transition: transform 0.3s ease-in-out; /* Smooth slide up/down */
 }
 
 /* Base styles for all links in the nav */
@@ -78,6 +85,11 @@ body {
   transform: scale(1.1);     /* The zoom effect (1.1 = 110% size) */
   background-color: rgb(35, 33, 43);
   border-radius: 12px;
+}
+
+/* This class will be added/removed by JavaScript */
+.topnav.nav-hidden {
+  transform: translateY(-100%); /* Slides it perfectly off-screen */
 }
 
 /* Pitch Perfect */
@@ -126,20 +138,23 @@ body {
 }
 
 :root {
-    /* Change this to 60px, 80px, etc. and EVERYTHING will grow perfectly */
-    --w-width: 60px; 
+    /* Responsive width: Minimum 35px, Preferred 6vw, Maximum 70px */
+    --w-width: clamp(35px, 6vw, 70px); 
 }
 
 .piano {
-    padding: 30px;
+    padding: 20px 10px;
     display: flex;
     justify-content: center;
-    /* This prevents keys from squishing if the screen is too small */
-    flex-shrink: 0; 
+    width: 100%;
+    overflow-x: auto; /* Allows scrolling on small phones */
+    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+    white-space: nowrap;
 }
 
 .white {
     width: var(--w-width);
+    color: #181818;
     height: calc(var(--w-width) * 3.75); /* Keeps your 150px ratio */
     background: white;
     border: 1px solid black;
@@ -147,6 +162,17 @@ body {
     border-radius: 5px;
     position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+
+
+    /* Dont allow selection */    
+    -webkit-user-select: none;   /* Safari/Chrome/iOS specific */
+    -moz-user-select: none;      /* Firefox specific */
+    -ms-user-select: none;       /* Old Edge/IE specific */
+    user-select: none;           /* Standard syntax */
 }
 
 .black {
@@ -162,6 +188,16 @@ body {
     
     z-index: 2;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+
+    /* Dont allow selection */
+    -webkit-user-select: none;   /* Safari/Chrome/iOS specific */
+    -moz-user-select: none;      /* Firefox specific */
+    -ms-user-select: none;       /* Old Edge/IE specific */
+    user-select: none;           /* Standard syntax */
 }
 
 /* Hover effects stay the same */
@@ -172,7 +208,7 @@ body {
     text-align: center;
     font-size: 28px;
     font-weight: 800;
-    margin-top: 30px;
+    margin: 50px;
     height: 40px; /* Reserves space so the page doesn't jump */
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -216,6 +252,7 @@ body {
 }
 
 .main-action-btn {
+    background-color: #242325;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;

@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const statusDisplay = document.getElementById('status-message');
     const accuracyDisplay = document.getElementById('accuracy');
     const ratioDisplay = document.getElementById('score-ratio');
-
+    statusDisplay.innerText = "Press New Tone to Start!";
+    statusDisplay.style.color = "#4caf50";
     const playPiano = (note) => {
         if (note && sampler.loaded) {
             sampler.triggerAttackRelease(note, "2n");
