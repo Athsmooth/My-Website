@@ -11,7 +11,6 @@ body {
 }
 
 .title {
-    padding: 20px;
     text-align: center;
     font-size: 45px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -46,7 +45,7 @@ body {
     min-height: 80vh;      
 }
 .embed {
-    padding: 40px;
+    padding: 25px;
     text-align: center;
 }
 
@@ -102,7 +101,6 @@ body {
 .topnav a:hover {
   transform: scale(1.1);     /* The zoom effect (1.1 = 110% size) */
   background-color: rgb(35, 33, 43);
-  border-radius: 12px;
 }
 
 /* The hiding class */
@@ -112,31 +110,43 @@ body {
 
 /* Pitch Perfect */
 
+.note-selection {
+    display: flex;          /* Horizontal layout for the buttons inside */
+    flex-wrap: wrap;        /* Allows buttons to wrap if the screen is narrow */
+    gap: 8px;               /* Adds spacing between buttons */
+    margin: 10px;    /* Adds spacing between the two rows */
+    justify-content: center; /* Centers the row of buttons */
+}
 
 .filter-btn {
-    background-color: #333; /* Dark/Off state */
+    background-color: #333;
     color: #777;
-    border: 2px solid #444;
     width: 50px;
     height: 50px;
-    padding: 10px;
-    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: all 0.2s;
     border-radius: 5px;
+    border: none;
+    transition: all 0.2s;
 }
 
 .filter-btn.active {
-    background-color: #444b58; /* Green/On state */
-    color: white;
+    background-color: #165ddf; /* Green/On state */
+    border: 2px solid #444;
+    color: white;   
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    border: none;
+    border: none;       
 }
 
 .filter-btn:hover {
     transform: translateY(-2px);
 }
 
+.placeholder-btn {
+    width: 50px;
+}
 .guess-btn {
     color: white;
     text-decoration: none;
@@ -240,9 +250,9 @@ body {
 .stats {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2rem;
+    font-size: 30px;
     color: #cecece;
-    margin-bottom: 10px;
+    margin: 20px;
     text-transform: uppercase;
 }
 

@@ -27,22 +27,29 @@
             </div>
             <br>
             <h2>Filter Allowed keys</h2>
+            <br>
             <div class="note-selection">
                 <button class="filter-btn active" data-note="C">C</button>
-                <button class="filter-btn active" data-note="C#">C#</button>
                 <button class="filter-btn active" data-note="D">D</button>
-                <button class="filter-btn active" data-note="D#">D#</button>
                 <button class="filter-btn active" data-note="E">E</button>
                 <button class="filter-btn active" data-note="F">F</button>
-                <button class="filter-btn active" data-note="F#">F#</button>
                 <button class="filter-btn active" data-note="G">G</button>
-                <button class="filter-btn active" data-note="G#">G#</button>
                 <button class="filter-btn active" data-note="A">A</button>
-                <button class="filter-btn active" data-note="A#">A#</button>
                 <button class="filter-btn active" data-note="B">B</button>
             </div>
+            <div class="note-selection">
+                <button class="filter-btn active" data-note="C#">C#</button>
+                <button class="filter-btn active" data-note="D#">D#</button>
+                <div class="placeholder-btn"></div>
+                <button class="filter-btn active" data-note="F#">F#</button>
+                <button class="filter-btn active" data-note="G#">G#</button>
+                <button class="filter-btn active" data-note="A#">A#</button>
+            </div>
             <br>
-            <h1>Guess!</h1>
+            <div class="stats">
+                Score: <span id="score-ratio">0/0</span> |
+                Accuracy: <span id="accuracy">100</span>%
+            </div>
             <div class="piano">
                 <div class="key white" data-note="C4">C</div>
                 <div class="key black" data-note="C#4">C#</div>
@@ -58,10 +65,6 @@
                 <div class="key white" data-note="B4">B</div>
             </div>
             <br>
-            <div class="stats">
-                Score: <span id="score-ratio">0/0</span> |
-                Accuracy: <span id="accuracy">100</span>%
-            </div>
         </div>
         </div>
     </div>

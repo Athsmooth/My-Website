@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!currentCorrectNote)
             {
-                statusDisplay.innerText = "Start by pressing [New Tone] before guessing!";
+                statusDisplay.innerText = "Hear the tone before guessing!";
                 statusDisplay.style.color = "#f44336";
                 return;
             }
