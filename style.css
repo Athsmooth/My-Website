@@ -17,7 +17,7 @@ body {
     font-weight: 700;
 }
 
-.subtitle {
+.description {
     padding: 10px;
     text-align: center;
     font-size: 20 px;
@@ -31,22 +31,19 @@ body {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 
     /* Content inside */
-    padding: 20px 20px;
+    padding: 20px;
     border-radius: 15px;
-
-    /* --- THE INNER ALIGNMENT --- */
+    text-align: center;
+    
+    /* min-height ensures the box still looks like a large rectangle 
+       even if there isn't much content inside yet */
+    min-height: 100vh;      
+}
+.embed {
     display: flex;
     flex-direction: column;
     align-items: center;      /* Keeps everything centered HORIZONTALLY */
     justify-content: flex-start; /* Aligns everything to the TOP (Vertical) */
-    
-    /* min-height ensures the box still looks like a large rectangle 
-       even if there isn't much content inside yet */
-    min-height: 80vh;      
-}
-.embed {
-    padding: 25px;
-    text-align: center;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -94,7 +91,7 @@ body {
   padding: 10px 10px; /* Slightly reduced padding to fit better */
   display: inline-block;
   transition: all 0.3s ease;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 /* The "Selected" state (Home) and Hover state */ 
@@ -114,7 +111,7 @@ body {
     display: flex;          /* Horizontal layout for the buttons inside */
     flex-wrap: wrap;        /* Allows buttons to wrap if the screen is narrow */
     gap: 8px;               /* Adds spacing between buttons */
-    margin: 10px;    /* Adds spacing between the two rows */
+    margin: 5px;    /* Adds spacing between the two rows */
     justify-content: center; /* Centers the row of buttons */
 }
 
@@ -171,7 +168,6 @@ body {
 }
 
 .piano {
-    padding: 20px 10px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -247,12 +243,42 @@ body {
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
+.subtitle {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.boxlist {
+    padding-left: 200px; 
+    text-align: left;
+    font-size: 20px;
+
+    ol {
+        display: grid;
+        /* Force exactly 8 equal columns */
+        grid-template-columns: repeat(5, 1fr); 
+        
+        /* Keeps a consistent 100px gap between all items */
+        gap: 100px;     
+        
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        a, a:link, a:visited, a:hover, a:active {
+            font-family: 'Times New Roman', Times, serif;
+            color: white !important;    
+        }
+    }
+}
+
+
 .stats {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
     color: #cecece;
-    margin: 20px;
+    margin: 40px;
     text-transform: uppercase;
 }
 

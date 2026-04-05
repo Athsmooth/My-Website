@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="pitchperfect.html">Pitch Perfect Game</a>
+          <a href="open-source-list.html">Open Source List</a>
         </div>
       </div>
     `;
