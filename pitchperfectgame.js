@@ -107,9 +107,16 @@ document.addEventListener("DOMContentLoaded", () => {
         key.addEventListener('click', async () => {
             await Tone.start();
             const guessedNote = key.getAttribute('data-note');
-            playPiano(guessedNote);
 
-            if (!currentCorrectNote) return;
+            if (!currentCorrectNote)
+            {
+                statusDisplay.innerText = "Start by pressing [New Tone] before guessing!";
+                statusDisplay.style.color = "#f44336";
+                return;
+            }
+            else{
+                playPiano(guessedNote);
+            }
 
             totalGuesses++;
 

@@ -13,7 +13,7 @@ body {
 .title {
     padding: 20px;
     text-align: center;
-    font-size: 35px;
+    font-size: 45px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 700;
 }
@@ -24,15 +24,16 @@ body {
     font-size: 20 px;
 }
 
-.content {
+.content {    
+    /* Rectangle */
     background-color: #1f1e21;
+    margin: 80px auto; 
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+    /* Content inside */
     padding: 20px 20px;
     border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    
-    /* Centering the "Rectangle" itself on the page */
-    margin: auto; 
-    width: 90%;
 
     /* --- THE INNER ALIGNMENT --- */
     display: flex;
@@ -78,6 +79,15 @@ body {
   gap: 10px; /* Perfect spacing between buttons */
 }
 
+.topnav {
+  background-color: #181818;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother curve */
+  will-change: transform; /* Optimizes performance */
+}
+
 /* Ensure your links don't have extra margins that break alignment */
 .topnav a {
   color: white;
@@ -95,9 +105,9 @@ body {
   border-radius: 12px;
 }
 
-/* This class will be added/removed by JavaScript */
+/* The hiding class */
 .topnav.nav-hidden {
-  transform: translateY(-100%); /* Slides it perfectly off-screen */
+  transform: translateY(-110%) !important; /* -110% ensures the shadow/border is also hidden */
 }
 
 /* Pitch Perfect */
@@ -214,10 +224,9 @@ body {
 
 #status-message {
     text-align: center;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 800;
-    margin: 50px;
-    height: 40px; /* Reserves space so the page doesn't jump */
+    padding: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
