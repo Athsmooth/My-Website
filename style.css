@@ -5,14 +5,13 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #22222b;
+  background-color: #1b1b1c;
   color: #ddd;
   margin: 0;
 }
 
 .title {
-    padding: 20px;
-    padding-top: 40px;
+    padding: 10px;
     text-align: center;
     font-size: 35px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -23,6 +22,31 @@ body {
     padding: 10px;
     text-align: center;
     font-size: 20 px;
+}
+
+.content {
+    background-color: #1f1e21;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    
+    /* Centering the "Rectangle" itself on the page */
+    margin: 40px auto; 
+    width: 90%;
+
+    /* --- THE INNER ALIGNMENT --- */
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Keeps everything centered HORIZONTALLY */
+    justify-content: flex-start; /* Aligns everything to the TOP (Vertical) */
+    
+    /* min-height ensures the box still looks like a large rectangle 
+       even if there isn't much content inside yet */
+    min-height: 80vh;      
+}
+.embed {
+    padding: 30px;
+    text-align: center;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -46,8 +70,7 @@ body {
   display: inline-block;
   transition: all 0.3s ease; /* Makes the zoom and border smooth */
   border: 2px solid transparent; /* Prevents jumping when border appears */
-  font-size: 100;
-  border-radius: 20;
+  border-radius: 20px;
 }
 
 /* The "Selected" state (Home) and Hover state */ 
@@ -57,3 +80,165 @@ body {
   border-radius: 12px;
 }
 
+/* Pitch Perfect */
+
+
+.filter-btn {
+    background-color: #333; /* Dark/Off state */
+    color: #777;
+    border: 2px solid #444;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 5px;
+}
+
+.filter-btn.active {
+    background-color: #444b58; /* Green/On state */
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border: none;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+.guess-btn {
+    color: white;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    transition: all 0.3s ease; /* Makes the zoom and border smooth */
+    border: 2px solid transparent; /* Prevents jumping when border appears */
+    border-radius: 10px;
+    background-color: #181818;
+}
+
+.guess-btn:hover {
+    background-color: #313137; /* Lightens the black slightly */
+    transform: translateY(-2px); /* Optional: lifts the button up slightly */
+    cursor: pointer;
+}
+
+:root {
+    /* Change this to 60px, 80px, etc. and EVERYTHING will grow perfectly */
+    --w-width: 60px; 
+}
+
+.piano {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    /* This prevents keys from squishing if the screen is too small */
+    flex-shrink: 0; 
+}
+
+.white {
+    width: var(--w-width);
+    height: calc(var(--w-width) * 3.75); /* Keeps your 150px ratio */
+    background: white;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.black {
+    /* This keeps the black key at 75% of the white key width */
+    width: calc(var(--w-width) * 0.75); 
+    height: calc(var(--w-width) * 2.25); /* Keeps your 90px ratio */
+    background: black;
+    border-radius: 0 0 5px 5px; /* Pianos usually only round the bottom */
+    
+    /* This centers the black key exactly on the line between white keys */
+    margin-left: calc(var(--w-width) * -0.375); 
+    margin-right: calc(var(--w-width) * -0.375);
+    
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Hover effects stay the same */
+.white:hover { background-color: #a1a1a1; }
+.black:hover { background-color: #313137; }
+
+#status-message {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 30px;
+    height: 40px; /* Reserves space so the page doesn't jump */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Ensure the keys have a smooth color transition */
+.key, .guess-btn {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.stats {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    color: #cecece;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#accuracy {
+    font-weight: bold;
+    color: #4caf50;
+    transition: color 0.3s ease;
+}
+
+/* Center the button container */
+.controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Center the button container */
+.controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.main-action-btn {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    background-color: #181818;
+    min-width: 200px;
+    
+    /* ADD THIS LINE */
+    border: none; 
+    
+    /* Optional: If you want to ensure it doesn't show an 
+       outline when clicked (blue ring), add this too: */
+    outline: none; 
+}
+
+.main-action-btn:hover {
+    transform: scale(1.05);
+    background-color: #2b2a2d; /* Turns green on hover */
+    color: white;
+    box-shadow: 0 0 20px rgba(30, 30, 30, 0.4);
+}

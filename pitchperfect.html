@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="ZH5PNFO4dJELDd7PfxtxN9RpdTwmCu7uR3KBDm5VKlI" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
     <link rel="stylesheet" href="style.css">
     <n>
     <title>Pitch Perfect Challenge</title>
@@ -12,8 +13,55 @@
     <!-- Move these here! -->
     <div class="topnav"></div>
     <script src="navbar.js"></script>
-    <div class="title">Pitch perfect</div>
-    <div class="subtitle">
-        <p>Right now, there is nothing, but I will try to design my own pitch game eventually</p>
+    <div class="content">
+        <div class="title">Pitch perfect</div>
+        <div class="subtitle">
+            <p>Press "New Note" to begin guessing!</p>
+        </div>
+        <div class="embed">
+            <script src="pitchperfectgame.js" defer></script>
+                    <div class="game-container">
+            <div class="stats">
+                Score: <span id="score-ratio">0/0</span> |
+                Accuracy: <span id="accuracy">100</span>%
+            </div>
+            <div id="status-message"></div>
+            <div class="controls">
+                <button id="new-tone-btn" class="main-action-btn">New Tone</button>
+            </div>
+            </div>
+            <br>
+            <br>
+            <div class="note-selection">
+                <button class="filter-btn active" data-note="C">C</button>
+                <button class="filter-btn active" data-note="C#">C#</button>
+                <button class="filter-btn active" data-note="D">D</button>
+                <button class="filter-btn active" data-note="D#">D#</button>
+                <button class="filter-btn active" data-note="E">E</button>
+                <button class="filter-btn active" data-note="F">F</button>
+                <button class="filter-btn active" data-note="F#">F#</button>
+                <button class="filter-btn active" data-note="G">G</button>
+                <button class="filter-btn active" data-note="G#">G#</button>
+                <button class="filter-btn active" data-note="A">A</button>
+                <button class="filter-btn active" data-note="A#">A#</button>
+                <button class="filter-btn active" data-note="B">B</button>
+            </div>
+            <div class="piano">
+                <div class="key white" data-note="C4"></div>
+                <div class="key black" data-note="C#4"></div>
+                <div class="key white" data-note="D4"></div>
+                <div class="key black" data-note="D#4"></div>
+                <div class="key white" data-note="E4"></div>
+                <div class="key white" data-note="F4"></div>
+                <div class="key black" data-note="F#4"></div>
+                <div class="key white" data-note="G4"></div>
+                <div class="key black" data-note="G#4"></div>
+                <div class="key white" data-note="A4"></div>
+                <div class="key black" data-note="A#4"></div>
+                <div class="key white" data-note="B4"></div>
+            </div>
+            <div id="status-message"></div>
+        </div>
+        </div>
     </div>
 </body>
