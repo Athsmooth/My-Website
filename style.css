@@ -11,7 +11,7 @@ body {
 }
 
 .title {
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     font-size: 35px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -26,12 +26,12 @@ body {
 
 .content {
     background-color: #1f1e21;
-    padding: 40px 20px;
+    padding: 20px 20px;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     
     /* Centering the "Rectangle" itself on the page */
-    margin: 40px auto; 
+    margin: auto; 
     width: 90%;
 
     /* --- THE INNER ALIGNMENT --- */
@@ -45,7 +45,7 @@ body {
     min-height: 80vh;      
 }
 .embed {
-    padding: 30px;
+    padding: 40px;
     text-align: center;
 }
 
@@ -56,27 +56,35 @@ body {
   }
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #181818;
-  overflow: hidden;
-
-  /* --- New Required Styles --- */
-  position: fixed;      /* Sits on top of the content */
-  top: 0;
+/* Container for everything inside the nav */
+.nav-content {
+  display: flex;
+  align-items: center;
   width: 100%;
-  z-index: 1000;        /* Ensures it stays above the piano/content */
-  transition: transform 0.3s ease-in-out; /* Smooth slide up/down */
+  padding: 20px; /* Side padding instead of putting it on the image */
 }
 
-/* Base styles for all links in the nav */
+/* Styles for the logo */
+.nav-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 20px; /* Space between logo and first button */
+  border-radius: 10px;
+}
+
+/* Styles for the links container */
+.nav-links {
+  display: flex;
+  gap: 10px; /* Perfect spacing between buttons */
+}
+
+/* Ensure your links don't have extra margins that break alignment */
 .topnav a {
   color: white;
   text-decoration: none;
-  padding: 20px 20px;
+  padding: 10px 10px; /* Slightly reduced padding to fit better */
   display: inline-block;
-  transition: all 0.3s ease; /* Makes the zoom and border smooth */
-  border: 2px solid transparent; /* Prevents jumping when border appears */
+  transition: all 0.3s ease;
   border-radius: 20px;
 }
 

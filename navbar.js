@@ -1,8 +1,13 @@
 // navbar.js
 document.addEventListener("DOMContentLoaded", () => {
     const navHTML = `
-      <a href="index.html">Home</a>
-      <a href="pitchperfect.html">Pitch Perfect Game</a>
+      <div class="nav-content">
+        <img src="assets/logo3.png" class="nav-logo" alt="Logo">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="pitchperfect.html">Pitch Perfect Game</a>
+        </div>
+      </div>
     `;
 
     const topnav = document.querySelector('.topnav');
